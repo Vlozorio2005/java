@@ -45,7 +45,7 @@ public class Lab11avst
       int lastPrime;
       int currentPrime;
       int difPrime;
-      
+      boolean 
       for(int k = 2; k < n; k++)
 			{
             if (primes[k]==true)                              
