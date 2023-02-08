@@ -30,7 +30,7 @@ public class Lab11avst
       
       for(int k = 2; k < n; k++)
       {      
-         
+         if (primes[k]==true) 
          for (int y=k+k;y<n;y+=k)
             primes[y]=false;
       } 
@@ -45,19 +45,22 @@ public class Lab11avst
       int lastPrime;
       int currentPrime;
       int difPrime;
-      boolean 
-      for(int k = 2; k < n; k++)
-			{
+      boolean runPrintPrimes=false;
+      int totalPrimes;
+	for(int k = 2; k < n; k++)
+	{
             if (primes[k]==true)                              
             {   
-               lastPrime=k;
+              	totalPrimes++; 
+	    	lastPrime=k;
                difPrime=currentPrime-lastPrime;
-               
-               System.out.print(output1.format(k)+" ");               
+               if (runPrintPrimes=true)
+               	System.out.print(output1.format(k)+" ");               
                lastPrime=currentPrime;  
             
             }
          }
+	
 	}
 
 }
