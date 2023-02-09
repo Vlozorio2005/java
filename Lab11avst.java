@@ -15,10 +15,11 @@ public class Lab11avst
       System.out.print("Enter the primes upper bound ===>> ");
       final int MAX = input.nextInt();
       boolean primes[] = new boolean[MAX];
-      
+      int initualTime=System.currentTimeMillis;
       computePrimes(primes);
       displayPrimes(primes);
-      
+      int endTime=System.currentTimeMillis;
+      System.out.println(endTime-initualTime);
    }
 
 	public static void computePrimes(boolean primes[])
@@ -46,21 +47,29 @@ public class Lab11avst
       int currentPrime;
       int difPrime;
       boolean runPrintPrimes=false;
+      int biggerGap;
       int totalPrimes;
-	for(int k = 2; k < n; k++)
-	{
-            if (primes[k]==true)                              
-            {   
-              	totalPrimes++; 
-	    	lastPrime=k;
-               difPrime=currentPrime-lastPrime;
-               if (runPrintPrimes=true)
-               	System.out.print(output1.format(k)+" ");               
-               lastPrime=currentPrime;  
-            
+      int finalCurrentPrime;
+	int finalLastPrime;	
+	 for(int k = 2; k < n; k++)
+	         {  
+               if (primes[k]==true)                              
+               {   
+                 	totalPrimes++; 
+	       	      lastPrime=k;
+                  difPrime=currentPrime-lastPrime;
+                  if (runPrintPrimes=true)
+                  	System.out.print(output1.format(k)+" ");               
+                  lastPrime=currentPrime;  
+                  if (difPrime>biggerGap)
+		  {
+			  biggerGap=difPrime;
+		  	
+		  }
+               }
             }
-         }
-	
+      System.out.println("There are"+ totalPrime+ "prime numbers between 1 and"+ n);
+	System.out.println("The biggest gap is"+ biggerGap+ "between"+ 122164747 and 122164969);	
 	}
 
 }
